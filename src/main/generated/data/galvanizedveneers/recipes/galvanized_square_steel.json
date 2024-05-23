@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "b": {
+      "item": "minecraft:iron_ingot"
+    }
+  },
+  "pattern": [
+    "bbb",
+    "b b",
+    "bbb"
+  ],
+  "result": {
+    "count": 1,
+    "id": "galvanizedveneers:galvanized_square_steel"
+  }
+}
