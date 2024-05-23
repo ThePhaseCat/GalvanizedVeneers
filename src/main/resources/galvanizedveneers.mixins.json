@@ -1,0 +1,11 @@
+{
+	"required": true,
+	"package": "phase.galvanized_veneers.mixin",
+	"compatibilityLevel": "JAVA_21",
+	"mixins": [
+		"ExampleMixin"
+	],
+	"injectors": {
+		"defaultRequire": 1
+	}
+}
