@@ -17,7 +17,7 @@ public class GalvanizedVeneers implements ModInitializer {
 	// That way, it's clear which mod wrote info, warnings, and errors.
     public static final Logger LOGGER = LoggerFactory.getLogger("galvanizedveneers");
 
-	public static final Block GALVANIZED_SQUARE_STEEL = new Block(Block.Settings.create().strength(4.0f));
+	public static final Block GALVANIZED_SQUARE_STEEL = new Block(Block.Settings.create().hardness(1.5f).resistance(100.0f));
 
 	@Override
 	public void onInitialize() {
