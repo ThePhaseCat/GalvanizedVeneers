@@ -16,7 +16,9 @@ public class LanguageGen extends FabricLanguageProvider {
     }
 
     @Override
-    public void generateTranslations(RegistryWrapper.WrapperLookup registryLookup, TranslationBuilder translationBuilder) {
+    public void generateTranslations(RegistryWrapper.WrapperLookup registryLookup, TranslationBuilder translationBuilder)
+    {
         translationBuilder.add(GalvanizedVeneers.GALVANIZED_SQUARE_STEEL, "Galvanized Square Steel");
+        translationBuilder.add(GalvanizedVeneers.WOOD_VENEER, "Wood Veneer");
     }
 }

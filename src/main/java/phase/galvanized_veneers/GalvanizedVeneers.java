@@ -18,6 +18,7 @@ public class GalvanizedVeneers implements ModInitializer {
     public static final Logger LOGGER = LoggerFactory.getLogger("galvanizedveneers");
 
 	public static final Block GALVANIZED_SQUARE_STEEL = new Block(Block.Settings.create().hardness(1.5f).resistance(100.0f));
+	public static final Block WOOD_VENEER = new Block(Block.Settings.create().hardness(0.5f).resistance(2.5f));
 
 	@Override
 	public void onInitialize() {
@@ -28,5 +29,7 @@ public class GalvanizedVeneers implements ModInitializer {
 		LOGGER.info("GalvanizedVeneers Started");
 		Registry.register(Registries.BLOCK, new Identifier("galvanizedveneers", "galvanized_square_steel"), GALVANIZED_SQUARE_STEEL);
 		Registry.register(Registries.ITEM, new Identifier("galvanizedveneers", "galvanized_square_steel"), new BlockItem(GALVANIZED_SQUARE_STEEL, new Item.Settings()));
+		Registry.register(Registries.BLOCK, new Identifier("galvanizedveneers", "wood_veneer"), WOOD_VENEER);
+		Registry.register(Registries.ITEM, new Identifier("galvanizedveneers", "wood_veneer"), new BlockItem(WOOD_VENEER, new Item.Settings()));
 	}
 }

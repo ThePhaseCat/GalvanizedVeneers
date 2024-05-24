@@ -14,7 +14,9 @@ public class BlockLootTableGen extends FabricBlockLootTableProvider {
     }
 
     @Override
-    public void generate() {
+    public void generate()
+    {
         addDrop(GalvanizedVeneers.GALVANIZED_SQUARE_STEEL);
+        addDrop(GalvanizedVeneers.WOOD_VENEER);
     }
 }
