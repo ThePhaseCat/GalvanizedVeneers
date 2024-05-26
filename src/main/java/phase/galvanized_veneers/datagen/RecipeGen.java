@@ -33,5 +33,12 @@ public class RecipeGen extends FabricRecipeProvider
                 .criterion(FabricRecipeProvider.hasItem(Items.IRON_INGOT),
                         FabricRecipeProvider.conditionsFromItem(Items.IRON_INGOT))
                 .offerTo(exporter);
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, GalvanizedVeneers.WOOD_VENEER)
+                .pattern("sss").pattern("sss").pattern("sss")
+                .input('s', Items.OAK_PLANKS)
+                .criterion(FabricRecipeProvider.hasItem(Items.OAK_PLANKS),
+                        FabricRecipeProvider.conditionsFromItem(Items.OAK_PLANKS))
+                .offerTo(exporter);
     }
 }

@@ -1,20 +1,18 @@
 {
   "type": "minecraft:crafting_shaped",
   "category": "building",
-  "group": "planks",
   "key": {
-    "P": {
-      "tag": "minecraft:planks"
+    "s": {
+      "item": "minecraft:oak_planks"
     }
   },
   "pattern": [
-    "PPP",
-    "PPP",
-    "PPP"
+    "sss",
+    "sss",
+    "sss"
   ],
   "result": {
-    "count": 8,
-    "item": "galvanizedveneers:wood_veneer"
-  },
-  "show_notification": true
+    "count": 1,
+    "id": "galvanizedveneers:wood_veneer"
+  }
 }
