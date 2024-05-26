@@ -1,0 +1,10 @@
+{
+  "little_john": {
+    "sounds": [
+      {
+        "name": "galvanizedveneers:little_john",
+        "stream": true
+      }
+    ]
+  }
+}
