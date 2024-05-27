@@ -46,7 +46,7 @@ public class GalvanizedVeneers implements ModInitializer {
 		// However, some things (like resources) may still be uninitialized.
 		// Proceed with mild caution.
 
-		LOGGER.info("GalvanizedVeneers Started");
+		LOGGER.info("GalvanizedVeneers Started!");
 		Registry.register(Registries.BLOCK, new Identifier("galvanizedveneers", "galvanized_square_steel"), GALVANIZED_SQUARE_STEEL);
 		Registry.register(Registries.ITEM, new Identifier("galvanizedveneers", "galvanized_square_steel"), new BlockItem(GALVANIZED_SQUARE_STEEL, new Item.Settings()));
 		Registry.register(Registries.BLOCK, new Identifier("galvanizedveneers", "wood_veneer"), WOOD_VENEER);
@@ -54,6 +54,8 @@ public class GalvanizedVeneers implements ModInitializer {
 		Registry.register(Registries.ITEM, new Identifier("galvanizedveneers", "little_john_disc"), LITTLE_JOHN_DISC);
 
 		Registry.register(Registries.ITEM_GROUP, new Identifier("galvanizedveneers", "item_group"), ITEM_GROUP);
+
+		LOGGER.info("GalvanizedVeneers Finished! Hopefully this will help you expand your tiny apartment!");
 	}
 
 	private static SoundEvent registerSoundEvent(String name) {
