@@ -3,22 +3,20 @@ package phase.galvanized_veneers.datagen;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
 import net.minecraft.registry.RegistryWrapper;
-import net.minecraft.registry.tag.BlockTags;
 import net.minecraft.registry.tag.ItemTags;
 import phase.galvanized_veneers.GalvanizedVeneers;
 
 import java.util.concurrent.CompletableFuture;
 
-public class BlockTagGen extends FabricTagProvider.BlockTagProvider{
+public class ItemTagGen extends FabricTagProvider.ItemTagProvider{
 
-    public BlockTagGen(FabricDataOutput output, CompletableFuture<RegistryWrapper.WrapperLookup> registriesFuture) {
-        super(output, registriesFuture);
+    public ItemTagGen(FabricDataOutput dataOutput, CompletableFuture<RegistryWrapper.WrapperLookup> registriesFuture) {
+        super(dataOutput, registriesFuture);
     }
 
     @Override
     protected void configure(RegistryWrapper.WrapperLookup wrapperLookup) {
-        getOrCreateTagBuilder(BlockTags.NEEDS_IRON_TOOL)
-                .add(GalvanizedVeneers.GALVANIZED_SQUARE_STEEL)
-                .add(GalvanizedVeneers.WOOD_VENEER);
+        getOrCreateTagBuilder(ItemTags.MUSIC_DISCS)
+                .add(GalvanizedVeneers.LITTLE_JOHN_DISC);
     }
 }

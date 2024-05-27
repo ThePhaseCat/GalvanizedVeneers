@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "A": {
+      "item": "galvanizedveneers:wood_veneer"
+    },
+    "s": {
+      "item": "galvanizedveneers:galvanized_square_steel"
+    }
+  },
+  "pattern": [
+    "sAs",
+    "AsA",
+    "sAs"
+  ],
+  "result": {
+    "count": 1,
+    "id": "galvanizedveneers:little_john_disc"
+  }
+}
