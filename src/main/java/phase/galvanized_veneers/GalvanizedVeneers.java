@@ -5,6 +5,7 @@ import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
 import net.fabricmc.fabric.api.registry.FlammableBlockRegistry;
 import net.minecraft.block.Block;
+import net.minecraft.block.Blocks;
 import net.minecraft.item.*;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
@@ -22,8 +23,8 @@ public class GalvanizedVeneers implements ModInitializer {
 
 	private static SoundEvent little_john = registerSoundEvent("little_john");
 
-	public static final Block GALVANIZED_SQUARE_STEEL = new Block(Block.Settings.create().hardness(1.5f).resistance(100.0f));
-	public static final Block WOOD_VENEER = new Block(Block.Settings.create().hardness(0.5f).resistance(2.5f));
+	public static final Block GALVANIZED_SQUARE_STEEL = new Block(Block.Settings.copy(Blocks.IRON_BLOCK).hardness(1.5f).resistance(100.0f));
+	public static final Block WOOD_VENEER = new Block(Block.Settings.copy(Blocks.OAK_PLANKS).hardness(0.5f).resistance(2.5f));
 
 	public static final Item LITTLE_JOHN_DISC = new MusicDiscItem(15, little_john, new Item.Settings().maxCount(1), 48);
 
