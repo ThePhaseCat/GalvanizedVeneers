@@ -16,6 +16,6 @@ public class ItemTagGen extends FabricTagProvider.ItemTagProvider{
 
     @Override
     protected void configure(RegistryWrapper.WrapperLookup wrapperLookup) {
-        getOrCreateTagBuilder(JukeboxPl
+
     }
 }
