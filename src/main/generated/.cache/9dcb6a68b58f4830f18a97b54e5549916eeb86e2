@@ -1,3 +1,3 @@
-// 1.20.6	2024-05-26T19:45:01.4002934	GalvanizedVeneers/Block Loot Tables
-075a0aaffc9c2d1cc7a027dfff5cb6c7e94b778e data\galvanizedveneers\loot_tables\blocks\galvanized_square_steel.json
-5651b31821dedbd555eac91c817b24d23d1fd07f data\galvanizedveneers\loot_tables\blocks\wood_veneer.json
+// 1.21	2024-06-13T10:52:42.0648643	GalvanizedVeneers/Block Loot Tables
+5651b31821dedbd555eac91c817b24d23d1fd07f data\galvanizedveneers\loot_table\blocks\wood_veneer.json
+075a0aaffc9c2d1cc7a027dfff5cb6c7e94b778e data\galvanizedveneers\loot_table\blocks\galvanized_square_steel.json

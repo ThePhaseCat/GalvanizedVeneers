@@ -16,7 +16,6 @@ public class ItemTagGen extends FabricTagProvider.ItemTagProvider{
 
     @Override
     protected void configure(RegistryWrapper.WrapperLookup wrapperLookup) {
-        getOrCreateTagBuilder(ItemTags.MUSIC_DISCS)
-                .add(GalvanizedVeneers.LITTLE_JOHN_DISC);
+
     }
 }

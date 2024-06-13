@@ -26,7 +26,9 @@ public class GalvanizedVeneers implements ModInitializer {
 	public static final Block GALVANIZED_SQUARE_STEEL = new Block(Block.Settings.copy(Blocks.IRON_BLOCK).hardness(1.5f).resistance(100.0f));
 	public static final Block WOOD_VENEER = new Block(Block.Settings.copy(Blocks.OAK_PLANKS).hardness(0.5f).resistance(2.5f));
 
-	public static final Item LITTLE_JOHN_DISC = new MusicDiscItem(15, little_john, new Item.Settings().maxCount(1), 48);
+	public static final Item LITTLE_JOHN_DISC = new Item(new Item.Settings().maxCount(1));
+
+	//public static final Item LITTLE_JOHN_DISC = new MusicDiscItem(15, little_john, new Item.Settings().maxCount(1), 48);
 
 	private static final ItemGroup ITEM_GROUP = FabricItemGroup.builder()
 			.icon(() -> new ItemStack(GALVANIZED_SQUARE_STEEL))
@@ -59,7 +61,7 @@ public class GalvanizedVeneers implements ModInitializer {
 	}
 
 	private static SoundEvent registerSoundEvent(String name) {
-		Identifier id = new Identifier("galvanizedveneers", name);
+		Identifier id = Identifier.of("galvanizedveneers", name);
 		return Registry.register(Registries.SOUND_EVENT, id, SoundEvent.of(id));
 	}
 }

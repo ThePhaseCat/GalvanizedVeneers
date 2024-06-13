@@ -16,6 +16,6 @@ public class GalvanizedVeneersDataGenerator implements DataGeneratorEntrypoint {
 		myPack.addProvider(BlockTagGen::new);
 		myPack.addProvider(RecipeGen::new);
 		//myPack.addProvider(LanguageGen::new);
-		myPack.addProvider(ItemTagGen::new);
+		//myPack.addProvider(ItemTagGen::new);
 	}
 }
