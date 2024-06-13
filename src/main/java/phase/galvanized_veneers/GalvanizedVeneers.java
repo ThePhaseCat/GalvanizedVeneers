@@ -6,9 +6,11 @@ import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
 import net.fabricmc.fabric.api.registry.FlammableBlockRegistry;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
+import net.minecraft.block.jukebox.JukeboxSong;
 import net.minecraft.item.*;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
+import net.minecraft.registry.RegistryKey;
 import net.minecraft.sound.SoundEvent;
 import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
@@ -21,12 +23,13 @@ public class GalvanizedVeneers implements ModInitializer {
 	// That way, it's clear which mod wrote info, warnings, and errors.
     public static final Logger LOGGER = LoggerFactory.getLogger("galvanizedveneers");
 
-	private static SoundEvent little_john = registerSoundEvent("little_john");
+	private static final RegistryKey<JukeboxSong> new_little_john = RegistryKey.of(RegistryKey.of(), Identifier.of("galvanizedveneers", "little_john"));
+	//private static SoundEvent little_john = registerSoundEvent("little_john");
 
 	public static final Block GALVANIZED_SQUARE_STEEL = new Block(Block.Settings.copy(Blocks.IRON_BLOCK).hardness(1.5f).resistance(100.0f));
 	public static final Block WOOD_VENEER = new Block(Block.Settings.copy(Blocks.OAK_PLANKS).hardness(0.5f).resistance(2.5f));
 
-	public static final Item LITTLE_JOHN_DISC = new Item(new Item.Settings().maxCount(1));
+	public static final Item LITTLE_JOHN_DISC = new Item(new Item.Settings().component(JukeboxSong.of(new_little_john))
 
 	//public static final Item LITTLE_JOHN_DISC = new MusicDiscItem(15, little_john, new Item.Settings().maxCount(1), 48);
 
