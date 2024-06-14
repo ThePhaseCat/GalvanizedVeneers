@@ -19,14 +19,19 @@ public class GalvanizedVeneers implements ModInitializer {
 	// This logger is used to write text to the console and the log file.
 	// It is considered best practice to use your mod id as the logger's name.
 	// That way, it's clear which mod wrote info, warnings, and errors.
-	public static final Logger LOGGER = LoggerFactory.getLogger("galvanizedveneers");
+    public static final Logger LOGGER = LoggerFactory.getLogger("galvanizedveneers");
 
 
 	public static final ResourceKey<JukeboxSong> JUKEBOX_SONG_KEY = ResourceKey.create(Registries.JUKEBOX_SONG, ResourceLocation.fromNamespaceAndPath("galvanizedveneers", "little_john"));
 
 	public static final JukeboxPlayable JUKEBOX_PLAYABLE = new JukeboxPlayable(new EitherHolder<>(JUKEBOX_SONG_KEY), false);
 
-	public static final Block GALVANIZED_SQUARE_STEEL = new Block(FabricBlockSettings.of(Material.METAL).hardness(5.0f).resistance(6.0f).build());
+	public static final Block GALVANIZED_SQUARE_STEEL = new Block()
+
+	public static final Block GALVANIZED_SQUARE_STEEL = new Block(Block.Settings.copy(Blocks.IRON_BLOCK).hardness(1.5f).resistance(100.0f));
+	public static final Block WOOD_VENEER = new Block(Block.Settings.copy(Blocks.OAK_PLANKS).hardness(0.5f).resistance(2.5f));
+	public static final Item LITTLE_JOHN_DISC = new Item(new Item.Settings());
+	//public static final Item LITTLE_JOHN_DISC = new MusicDiscItem(15, little_john, new Item.Settings().maxCount(1), 48);
 
 	private static final ItemGroup ITEM_GROUP = FabricItemGroup.builder()
 			.icon(() -> new ItemStack(GALVANIZED_SQUARE_STEEL))
