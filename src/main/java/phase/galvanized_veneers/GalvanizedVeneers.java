@@ -11,6 +11,7 @@ import net.minecraft.item.*;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.registry.RegistryKey;
+import net.minecraft.registry.RegistryKeys;
 import net.minecraft.sound.SoundEvent;
 import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
@@ -23,15 +24,12 @@ public class GalvanizedVeneers implements ModInitializer {
 	// That way, it's clear which mod wrote info, warnings, and errors.
     public static final Logger LOGGER = LoggerFactory.getLogger("galvanizedveneers");
 
-	private static final RegistryKey new_little_john = RegistryKey.ofRegistry(Identifier.of("galvanizedveneer", "little_john"));
 
-	private static final RegistryKey<JukeboxSong> new_thingy = RegistryKey.of(new_little_john, Identifier.of("galvanizedveneer", "little_john"));
-	//private static SoundEvent little_john = registerSoundEvent("little_john");
-
+	public static final RegistryKey<JukeboxSong> LITTLE_JOHN_SONG = RegistryKey.of(RegistryKeys.JUKEBOX_SONG, Identifier.of("galvanizedveneers", "little_john"));
 
 	public static final Block GALVANIZED_SQUARE_STEEL = new Block(Block.Settings.copy(Blocks.IRON_BLOCK).hardness(1.5f).resistance(100.0f));
 	public static final Block WOOD_VENEER = new Block(Block.Settings.copy(Blocks.OAK_PLANKS).hardness(0.5f).resistance(2.5f));
-	public static final Item LITTLE_JOHN_DISC = new Item(new Item.Settings().jukeboxPlayable(new_thingy));
+	public static final Item LITTLE_JOHN_DISC = new Item(new Item.Settings().jukeboxPlayable(LITTLE_JOHN_SONG).maxCount(1));
 	//public static final Item LITTLE_JOHN_DISC = new MusicDiscItem(15, little_john, new Item.Settings().maxCount(1), 48);
 
 	private static final ItemGroup ITEM_GROUP = FabricItemGroup.builder()
@@ -62,10 +60,5 @@ public class GalvanizedVeneers implements ModInitializer {
 		Registry.register(Registries.ITEM_GROUP, Identifier.of("galvanizedveneers", "item_group"), ITEM_GROUP);
 
 		LOGGER.info("GalvanizedVeneers Finished! Hopefully this will help you expand your tiny apartment!");
-	}
-
-	private static SoundEvent registerSoundEvent(String name) {
-		Identifier id = Identifier.of("galvanizedveneers", name);
-		return Registry.register(Registries.SOUND_EVENT, id, SoundEvent.of(id));
 	}
 }

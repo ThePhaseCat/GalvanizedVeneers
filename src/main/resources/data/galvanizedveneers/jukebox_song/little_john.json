@@ -1,8 +1,8 @@
 {
-    "comparator_output": 1,
-    "description": "Little John's Favorite Tune...",
-    "length_in_seconds": 48,
-    "sound_event": {
-      "sound_id": "galvanizedveneers:little_john"
-    }
- }
+  "sound_event": {
+    "sound_id": "galvanizedveneers:little_john"
+  },
+  "description": "Little John's Favorite Tune...",
+  "length_in_seconds": 48,
+  "comparator_output": 15
+}
