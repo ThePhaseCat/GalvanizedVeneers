@@ -3,7 +3,6 @@ package phase.galvanized_veneers;
 import net.fabricmc.api.ModInitializer;
 
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
-import net.fabricmc.fabric.api.registry.FlammableBlockRegistry;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.jukebox.JukeboxSong;
@@ -12,13 +11,11 @@ import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.registry.RegistryKey;
 import net.minecraft.registry.RegistryKeys;
-import net.minecraft.sound.SoundEvent;
 import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import phase.galvanized_veneers.ModBlocks.GalvanizedSteelDefault;
-import phase.galvanized_veneers.ModBlocks.ModBlocks;
 
 public class GalvanizedVeneers implements ModInitializer {
 	// This logger is used to write text to the console and the log file.
