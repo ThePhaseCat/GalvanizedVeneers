@@ -1,5 +1,5 @@
 {
   "variants": {
-    "": { "model": "galvanizedveneers:block/galvanized_square_steel" }
+    "": { "model": "galvanizedveneers:block/true_galvanized_square_steel" }
   }
 }

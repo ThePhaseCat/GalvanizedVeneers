@@ -19,6 +19,7 @@ public class BlockTagGen extends FabricTagProvider.BlockTagProvider{
     protected void configure(RegistryWrapper.WrapperLookup wrapperLookup) {
         getOrCreateTagBuilder(BlockTags.NEEDS_IRON_TOOL)
                 .add(GalvanizedVeneers.GALVANIZED_SQUARE_STEEL)
+                .add(GalvanizedVeneers.TRUE_GALVANIZED_SQUARE_STEEL)
                 .add(GalvanizedVeneers.WOOD_VENEER);
     }
 }
