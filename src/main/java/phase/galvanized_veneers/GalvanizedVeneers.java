@@ -17,6 +17,8 @@ import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import phase.galvanized_veneers.ModBlocks.GalvanizedSteelDefault;
+import phase.galvanized_veneers.ModBlocks.ModBlocks;
 
 public class GalvanizedVeneers implements ModInitializer {
 	// This logger is used to write text to the console and the log file.
@@ -27,7 +29,7 @@ public class GalvanizedVeneers implements ModInitializer {
 
 	public static final RegistryKey<JukeboxSong> LITTLE_JOHN_SONG = RegistryKey.of(RegistryKeys.JUKEBOX_SONG, Identifier.of("galvanizedveneers", "little_john"));
 
-	public static final Block GALVANIZED_SQUARE_STEEL = new Block(Block.Settings.copy(Blocks.IRON_BLOCK).hardness(1.5f).resistance(100.0f));
+	public static final Block GALVANIZED_SQUARE_STEEL = new GalvanizedSteelDefault(Block.Settings.copy(Blocks.IRON_BLOCK).hardness(1.5f).resistance(100.0f));
 	public static final Block WOOD_VENEER = new Block(Block.Settings.copy(Blocks.OAK_PLANKS).hardness(0.5f).resistance(2.5f));
 	public static final Item LITTLE_JOHN_DISC = new Item(new Item.Settings().jukeboxPlayable(LITTLE_JOHN_SONG).maxCount(1));
 	//public static final Item LITTLE_JOHN_DISC = new MusicDiscItem(15, little_john, new Item.Settings().maxCount(1), 48);
