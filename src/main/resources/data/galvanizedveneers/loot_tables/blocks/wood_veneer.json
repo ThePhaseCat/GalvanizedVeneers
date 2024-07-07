@@ -1,20 +1,19 @@
 {
-  "type": "minecraft:block",
-  "pools": [
-    {
-      "bonus_rolls": 0.0,
-      "conditions": [
+    "type": "minecraft:block",
+    "pools": [
         {
-          "condition": "minecraft:survives_explosion"
+            "rolls": 1,
+            "entries": [
+                {
+                    "type": "minecraft:item",
+                    "name": "galvanizedveneers:wood_veneer"
+                }
+            ],
+            "conditions": [
+                {
+                    "condition": "minecraft:survives_explosion"
+                }
+            ]
         }
-      ],
-      "entries": [
-        {
-          "type": "minecraft:item",
-          "name": "galvanizedveneers:wood_veneer"
-        }
-      ],
-      "rolls": 1.0
-    }
-  ]
+    ]
 }
