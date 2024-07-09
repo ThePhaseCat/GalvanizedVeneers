@@ -42,6 +42,7 @@ public class GalvanizedSteelDefault extends FallingBlock {
             //GalvanizedVeneers.LOGGER.info("yum");
             world.playSound(null, pos, SoundEvents.BLOCK_ANVIL_PLACE, SoundCategory.BLOCKS, 1.0f, 1.0f);
             world.setBlockState(pos, GalvanizedVeneers.TRUE_GALVANIZED_SQUARE_STEEL.getDefaultState());
+            stack.decrement(1);
             return ItemActionResult.SUCCESS;
         }
 
