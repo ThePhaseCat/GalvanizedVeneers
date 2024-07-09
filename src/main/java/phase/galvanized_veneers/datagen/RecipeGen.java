@@ -50,5 +50,12 @@ public class RecipeGen extends FabricRecipeProvider
                 .criterion(FabricRecipeProvider.hasItem(GalvanizedVeneers.WOOD_VENEER),
                         FabricRecipeProvider.conditionsFromItem(GalvanizedVeneers.WOOD_VENEER))
                 .offerTo(exporter);
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, GalvanizedVeneers.EXPANSION_SCREW)
+                .pattern("iii").pattern(" i ").pattern(" i ")
+                .input('i', Items.IRON_INGOT)
+                .criterion(FabricRecipeProvider.hasItem(Items.IRON_INGOT),
+                        FabricRecipeProvider.conditionsFromItem(Items.IRON_INGOT))
+                .offerTo(exporter);
     }
 }

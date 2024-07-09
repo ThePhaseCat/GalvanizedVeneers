@@ -31,6 +31,8 @@ public class GalvanizedVeneers implements ModInitializer {
 	public static final Block TRUE_GALVANIZED_SQUARE_STEEL = new Block(Block.Settings.copy(Blocks.IRON_BLOCK).hardness(1.5f).resistance(100.0f));
 	public static final Block WOOD_VENEER = new Block(Block.Settings.copy(Blocks.OAK_PLANKS).hardness(0.5f).resistance(2.5f));
 	public static final Item LITTLE_JOHN_DISC = new Item(new Item.Settings().jukeboxPlayable(LITTLE_JOHN_SONG).maxCount(1));
+
+	public static final Item EXPANSION_SCREW = new Item(new Item.Settings().maxCount(64));
 	//public static final Item LITTLE_JOHN_DISC = new MusicDiscItem(15, little_john, new Item.Settings().maxCount(1), 48);
 
 	private static final ItemGroup ITEM_GROUP = FabricItemGroup.builder()
@@ -40,6 +42,7 @@ public class GalvanizedVeneers implements ModInitializer {
 				entries.add(GALVANIZED_SQUARE_STEEL.asItem());
 				entries.add(WOOD_VENEER.asItem());
 				entries.add(LITTLE_JOHN_DISC);
+				entries.add(EXPANSION_SCREW);
 			})
 			.build();
 
@@ -58,6 +61,7 @@ public class GalvanizedVeneers implements ModInitializer {
 		Registry.register(Registries.BLOCK, Identifier.of("galvanizedveneers", "wood_veneer"), WOOD_VENEER);
 		Registry.register(Registries.ITEM, Identifier.of("galvanizedveneers", "wood_veneer"), new BlockItem(WOOD_VENEER, new Item.Settings()));
 		Registry.register(Registries.ITEM, Identifier.of("galvanizedveneers", "little_john_disc"), LITTLE_JOHN_DISC);
+		Registry.register(Registries.ITEM, Identifier.of("galvanizedveneers", "expansion_screw"), EXPANSION_SCREW);
 
 		Registry.register(Registries.ITEM_GROUP, Identifier.of("galvanizedveneers", "item_group"), ITEM_GROUP);
 
