@@ -7,6 +7,8 @@ import net.minecraft.block.FallingBlock;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.server.MinecraftServer;
+import net.minecraft.sound.SoundCategory;
+import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
 import net.minecraft.util.ItemActionResult;
@@ -26,12 +28,19 @@ public class GalvanizedSteelDefault extends FallingBlock {
 
     @Override
     protected ItemActionResult onUseWithItem(ItemStack stack, BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult hit) {
-        GalvanizedVeneers.LOGGER.info(String.valueOf(stack));
+        //GalvanizedVeneers.LOGGER.info(String.valueOf(stack));
         //now replace this block with true galvanized square steel
         if(world.isClient) {
             return ItemActionResult.SUCCESS;
         }
         else{
+            //check what player is holding expansion screw
+            if(stack.getItem() != GalvanizedVeneers.EXPANSION_SCREW){
+                //GalvanizedVeneers.LOGGER.info("nu uh uh");
+                return ItemActionResult.FAIL;
+            }
+            //GalvanizedVeneers.LOGGER.info("yum");
+            world.playSound(null, pos, SoundEvents.BLOCK_ANVIL_PLACE, SoundCategory.BLOCKS, 1.0f, 1.0f);
             world.setBlockState(pos, GalvanizedVeneers.TRUE_GALVANIZED_SQUARE_STEEL.getDefaultState());
             return ItemActionResult.SUCCESS;
         }
