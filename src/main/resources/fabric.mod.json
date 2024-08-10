@@ -3,15 +3,15 @@
 	"id": "galvanizedveneers",
 	"version": "${version}",
 	"name": "GalvanizedVeneers",
-	"description": "it's time for little john to get a function house in minecraft",
+	"description": "it's time for little john to get a function house in Minecraft...",
 	"authors": [
 		"ThePhaseCat"
 	],
 	"contact": {
-		"homepage": "https://fabricmc.net/",
-		"sources": "https://github.com/FabricMC/fabric-example-mod"
+		"homepage": "https://github.com/ThePhaseCat/GalvanizedVeneers",
+		"sources": "https://github.com/ThePhaseCat/GalvanizedVeneers"
 	},
-	"license": "CC0-1.0",
+	"license": "MIT",
 	"icon": "assets/galvanizedveneers/icon.png",
 	"environment": "*",
 	"entrypoints": {
@@ -34,7 +34,7 @@
 	],
 	"depends": {
 		"fabricloader": ">=0.15.11",
-		"minecraft": "~1.21.0",
+		"minecraft": ">=1.21.0",
 		"java": ">=21",
 		"fabric-api": "*"
 	},
