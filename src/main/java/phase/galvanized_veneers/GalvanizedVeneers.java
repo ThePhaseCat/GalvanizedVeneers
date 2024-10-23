@@ -65,13 +65,13 @@ public class GalvanizedVeneers implements ModInitializer {
 		// Proceed with mild caution.
 
 		LOGGER.info("GalvanizedVeneers Started! It's time for Galvanized Square Steel!");
-		Registry.register(Registries.BLOCK, GALVANIZED_SQUARE_STEEL_KEY, GALVANIZED_SQUARE_STEEL);
-		Registry.register(Registries.ITEM, GALVANIZED_SQUARE_STEEL_ITEM_KEY, new BlockItem(GALVANIZED_SQUARE_STEEL, new Item.Settings()));
-		Registry.register(Registries.BLOCK, TRUE_GALVANIZED_SQUARE_STEEL_KEY, TRUE_GALVANIZED_SQUARE_STEEL);
+		//Registry.register(Registries.BLOCK, GALVANIZED_SQUARE_STEEL_KEY, GALVANIZED_SQUARE_STEEL);
+		//Registry.register(Registries.ITEM, GALVANIZED_SQUARE_STEEL_ITEM_KEY, new BlockItem(GALVANIZED_SQUARE_STEEL, new Item.Settings()));
+		//Registry.register(Registries.BLOCK, TRUE_GALVANIZED_SQUARE_STEEL_KEY, TRUE_GALVANIZED_SQUARE_STEEL);
 		Registry.register(Registries.BLOCK, WOOD_VENEER_KEY, WOOD_VENEER);
-		Registry.register(Registries.ITEM, WOOD_VENEER_ITEM_KEY, new BlockItem(WOOD_VENEER, new Item.Settings()));
-		Registry.register(Registries.ITEM, LITTLE_JOHN_DISC_KEY, LITTLE_JOHN_DISC);
-		Registry.register(Registries.ITEM, EXPANSION_SCREW_KEY, EXPANSION_SCREW);
+		//Registry.register(Registries.ITEM, WOOD_VENEER_ITEM_KEY, new BlockItem(WOOD_VENEER, new Item.Settings()));
+		//Registry.register(Registries.ITEM, LITTLE_JOHN_DISC_KEY, LITTLE_JOHN_DISC);
+		//Registry.register(Registries.ITEM, EXPANSION_SCREW_KEY, EXPANSION_SCREW);
 
 		Registry.register(Registries.ITEM_GROUP, Identifier.of("galvanizedveneers", "item_group"), ITEM_GROUP);
 
