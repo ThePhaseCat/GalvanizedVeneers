@@ -5,6 +5,7 @@ import net.minecraft.block.BlockState;
 import net.minecraft.block.FallingBlock;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
+import net.minecraft.registry.RegistryKey;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.ActionResult;
@@ -17,8 +18,9 @@ import phase.galvanized_veneers.GalvanizedVeneers;
 public class GalvanizedSteelDefault extends FallingBlock {
 
 
-    public GalvanizedSteelDefault(Settings settings) {
+    public GalvanizedSteelDefault(Settings settings, RegistryKey key) {
         super(settings);
+        settings.registryKey(key);
     }
 
     @Override
