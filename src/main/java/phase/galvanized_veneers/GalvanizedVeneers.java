@@ -16,6 +16,8 @@ import net.minecraft.util.Identifier;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import phase.galvanized_veneers.ModBlocks.GalvanizedSteelDefault;
+import phase.galvanized_veneers.ModBlocks.ModBlocks;
+import phase.galvanized_veneers.ModItems.ModItems;
 
 public class GalvanizedVeneers implements ModInitializer {
 	// This logger is used to write text to the console and the log file.
@@ -23,36 +25,37 @@ public class GalvanizedVeneers implements ModInitializer {
 	// That way, it's clear which mod wrote info, warnings, and errors.
     public static final Logger LOGGER = LoggerFactory.getLogger("galvanizedveneers");
 
+	public static final String modID = "galvanizedveneers";
 
 	public static final RegistryKey<JukeboxSong> LITTLE_JOHN_SONG = RegistryKey.of(RegistryKeys.JUKEBOX_SONG, Identifier.of("galvanizedveneers", "little_john"));
 
-	public static final RegistryKey<Block> GALVANIZED_SQUARE_STEEL_KEY = RegistryKey.of(RegistryKeys.BLOCK, Identifier.of("galvanizedveneers", "galvanized_square_steel"));
-	public static final Block GALVANIZED_SQUARE_STEEL = new GalvanizedSteelDefault(Block.Settings.copy(Blocks.IRON_BLOCK).hardness(1.5f).resistance(100.0f), GALVANIZED_SQUARE_STEEL_KEY);
+	//public static final Identifier GALVANIZED_SQUARE_STEEL_KEY = Identifier.of("galvanizedveneers", "galvanized_square_steel");
+	//public static final Block GALVANIZED_SQUARE_STEEL = new GalvanizedSteelDefault(Block.Settings.copy(Blocks.IRON_BLOCK).hardness(1.5f).resistance(100.0f), GALVANIZED_SQUARE_STEEL_KEY);
 
-	public static final RegistryKey<Block> TRUE_GALVANIZED_SQUARE_STEEL_KEY = RegistryKey.of(RegistryKeys.BLOCK, Identifier.of("galvanizedveneers", "true_galvanized_square_steel"));
-	public static final Block TRUE_GALVANIZED_SQUARE_STEEL = new Block(Block.Settings.copy(Blocks.IRON_BLOCK).hardness(1.5f).resistance(100.0f).registryKey(TRUE_GALVANIZED_SQUARE_STEEL_KEY));
+	//public static final RegistryKey<Block> TRUE_GALVANIZED_SQUARE_STEEL_KEY = RegistryKey.of(RegistryKeys.BLOCK, Identifier.of("galvanizedveneers", "true_galvanized_square_steel"));
+	//public static final Block TRUE_GALVANIZED_SQUARE_STEEL = new Block(Block.Settings.copy(Blocks.IRON_BLOCK).hardness(1.5f).resistance(100.0f).registryKey(TRUE_GALVANIZED_SQUARE_STEEL_KEY));
 
-	public static final RegistryKey<Block> WOOD_VENEER_KEY = RegistryKey.of(RegistryKeys.BLOCK, Identifier.of("galvanizedveneers", "wood_veneer"));
-	public static final Block WOOD_VENEER = new Block(Block.Settings.copy(Blocks.OAK_PLANKS).hardness(0.5f).resistance(2.5f).registryKey(WOOD_VENEER_KEY));
+	//public static final RegistryKey<Block> WOOD_VENEER_KEY = RegistryKey.of(RegistryKeys.BLOCK, Identifier.of("galvanizedveneers", "wood_veneer"));
+	//public static final Block WOOD_VENEER = new Block(Block.Settings.copy(Blocks.OAK_PLANKS).hardness(0.5f).resistance(2.5f).registryKey(WOOD_VENEER_KEY));
 
-	public static final RegistryKey<Item> LITTLE_JOHN_DISC_KEY = RegistryKey.of(RegistryKeys.ITEM, Identifier.of("galvanizedveneers", "little_john_disc"));
-	public static final Item LITTLE_JOHN_DISC = new Item(new Item.Settings().jukeboxPlayable(LITTLE_JOHN_SONG).maxCount(1).registryKey(LITTLE_JOHN_DISC_KEY));
+	//public static final RegistryKey<Item> LITTLE_JOHN_DISC_KEY = RegistryKey.of(RegistryKeys.ITEM, Identifier.of("galvanizedveneers", "little_john_disc"));
 
-	public static final RegistryKey<Item> EXPANSION_SCREW_KEY = RegistryKey.of(RegistryKeys.ITEM, Identifier.of("galvanizedveneers", "expansion_screw"));
-	public static final Item EXPANSION_SCREW = new Item(new Item.Settings().maxCount(64).registryKey(EXPANSION_SCREW_KEY));
+
+	//public static final RegistryKey<Item> EXPANSION_SCREW_KEY = RegistryKey.of(RegistryKeys.ITEM, Identifier.of("galvanizedveneers", "expansion_screw"));
+
 	//public static final Item LITTLE_JOHN_DISC = new MusicDiscItem(15, little_john, new Item.Settings().maxCount(1), 48);
 
-	public static final RegistryKey<Item> GALVANIZED_SQUARE_STEEL_ITEM_KEY = RegistryKey.of(RegistryKeys.ITEM, Identifier.of("galvanizedveneers", "galvanized_square_steel"));
-	public static final RegistryKey<Item> WOOD_VENEER_ITEM_KEY = RegistryKey.of(RegistryKeys.ITEM, Identifier.of("galvanizedveneers", "wood_veneer"));
+	//public static final RegistryKey<Item> GALVANIZED_SQUARE_STEEL_ITEM_KEY = RegistryKey.of(RegistryKeys.ITEM, Identifier.of("galvanizedveneers", "galvanized_square_steel"));
+	//public static final RegistryKey<Item> WOOD_VENEER_ITEM_KEY = RegistryKey.of(RegistryKeys.ITEM, Identifier.of("galvanizedveneers", "wood_veneer"));
 
 	private static final ItemGroup ITEM_GROUP = FabricItemGroup.builder()
-			.icon(() -> new ItemStack(GALVANIZED_SQUARE_STEEL))
+			.icon(() -> new ItemStack(Blocks.IRON_BLOCK))
 			.displayName(Text.literal("Galvanized Veneers"))
 			.entries((context, entries) -> {
-				entries.add(GALVANIZED_SQUARE_STEEL.asItem());
-				entries.add(WOOD_VENEER.asItem());
-				entries.add(LITTLE_JOHN_DISC);
-				entries.add(EXPANSION_SCREW);
+				//entries.add(GALVANIZED_SQUARE_STEEL.asItem());
+				//entries.add(WOOD_VENEER.asItem());
+				entries.add(ModItems.LITTLE_JOHN_DISC);
+				entries.add(ModItems.EXPANSION_SCREW);
 			})
 			.build();
 
@@ -65,10 +68,12 @@ public class GalvanizedVeneers implements ModInitializer {
 		// Proceed with mild caution.
 
 		LOGGER.info("GalvanizedVeneers Started! It's time for Galvanized Square Steel!");
+		ModItems.initialize();
+		ModBlocks.initialize();
 		//Registry.register(Registries.BLOCK, GALVANIZED_SQUARE_STEEL_KEY, GALVANIZED_SQUARE_STEEL);
 		//Registry.register(Registries.ITEM, GALVANIZED_SQUARE_STEEL_ITEM_KEY, new BlockItem(GALVANIZED_SQUARE_STEEL, new Item.Settings()));
 		//Registry.register(Registries.BLOCK, TRUE_GALVANIZED_SQUARE_STEEL_KEY, TRUE_GALVANIZED_SQUARE_STEEL);
-		Registry.register(Registries.BLOCK, WOOD_VENEER_KEY, WOOD_VENEER);
+		//Registry.register(Registries.BLOCK, WOOD_VENEER_KEY, WOOD_VENEER);
 		//Registry.register(Registries.ITEM, WOOD_VENEER_ITEM_KEY, new BlockItem(WOOD_VENEER, new Item.Settings()));
 		//Registry.register(Registries.ITEM, LITTLE_JOHN_DISC_KEY, LITTLE_JOHN_DISC);
 		//Registry.register(Registries.ITEM, EXPANSION_SCREW_KEY, EXPANSION_SCREW);

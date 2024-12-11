@@ -14,13 +14,13 @@ import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import phase.galvanized_veneers.GalvanizedVeneers;
+import phase.galvanized_veneers.ModItems.ModItems;
 
 public class GalvanizedSteelDefault extends FallingBlock {
 
 
-    public GalvanizedSteelDefault(Settings settings, RegistryKey key) {
+    public GalvanizedSteelDefault(Settings settings) {
         super(settings);
-        settings.registryKey(key);
     }
 
     @Override
@@ -32,13 +32,13 @@ public class GalvanizedSteelDefault extends FallingBlock {
         }
         else{
             //check what player is holding expansion screw
-            if(stack.getItem() != GalvanizedVeneers.EXPANSION_SCREW){
+            if(stack.getItem() != ModItems.EXPANSION_SCREW){
                 //GalvanizedVeneers.LOGGER.info("nu uh uh");
                 return ActionResult.FAIL;
             }
             //GalvanizedVeneers.LOGGER.info("yum");
             world.playSound(null, pos, SoundEvents.BLOCK_ANVIL_PLACE, SoundCategory.BLOCKS, 1.0f, 1.0f);
-            world.setBlockState(pos, GalvanizedVeneers.TRUE_GALVANIZED_SQUARE_STEEL.getDefaultState());
+            //world.setBlockState(pos, GalvanizedVeneers.TRUE_GALVANIZED_SQUARE_STEEL.getDefaultState());
             stack.decrement(1);
             return ActionResult.SUCCESS;
         }
